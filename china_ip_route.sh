@@ -5632,4 +5632,4 @@ ip route add 223.252.192.0/18 via $GW
 ip route add 223.254.0.0/16 via $GW 
 ip route add 223.255.0.0/17 via $GW 
 ip route add 223.255.236.0/22 via $GW 
-ip route add 223.255.252.0/23
+ip route add 223.255.252.0/23 via $GW 
