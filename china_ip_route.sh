@@ -1,5 +1,11 @@
 #!/bin/sh
-GW=192.168.9.1
+
+if [ $# -eq 0 ]
+  then
+    GW=192.168.9.1
+  else
+    GW=$1
+fi
 
 ip route add 1.0.1.0/24 via $GW 
 ip route add 1.0.2.0/23 via $GW 
