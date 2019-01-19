@@ -13,7 +13,6 @@ OTHERS=""
 if [ "$OP" = "add" ]; then
   OTHERS="via $GW"
 fi
-echo "ip route  $OP 1.0.1.0/24 $OTHERS"
 
 ip route  $OP 1.0.1.0/24 $OTHERS
 ip route  $OP 1.0.2.0/23 $OTHERS
