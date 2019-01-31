@@ -14,6 +14,11 @@ if [ "$OP" = "add" ]; then
   OTHERS="via $GW"
 fi
 
+ip route  $OP 40.83.93.39/32 $OTHERS
+ip route  $OP 23.101.1.99/32 $OTHERS
+ip route  $OP 52.230.3.14/32 $OTHERS
+ip route  $OP 40.83.164.222/32 $OTHERS
+ip route  $OP 45.79.91.217/32 $OTHERS
 ip route  $OP 1.0.1.0/24 $OTHERS
 ip route  $OP 1.0.2.0/23 $OTHERS
 ip route  $OP 1.0.8.0/21 $OTHERS
