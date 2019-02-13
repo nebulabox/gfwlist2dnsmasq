@@ -1,8 +1,7 @@
 #!/bin/sh
-
 if [ $# -ne 2 ]
   then
-    echo "Usage: china_ip_route_mac.sh add 192.168.2.2"
+    echo "Usage: china_ip_route_mac.sh add en0"
     echo "       china_ip_route_mac.sh del all "
     return
 fi
