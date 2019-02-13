@@ -1,14 +1,22 @@
 #!/bin/sh
-if [ $# -ne 2 ]
-  then
-    echo "Usage: china_ip_route_mac.sh add en0"
-    echo "       china_ip_route_mac.sh del all "
-    return
-fi
+
+# if [ $# -ne 2 ]
+#   then
+#     echo "Usage: china_ip_route_mac.sh add en0"
+#     echo "       china_ip_route_mac.sh del all "
+#     return
+# fi
 
 OP=$1
 GW=$2
 OTHERS=""
+
+if [ $# -eq 0 ]
+ then
+ OP="add"
+ GW=`/usr/sbin/networksetup -getinfo Wi-Fi | grep ^Router | awk '{print $2}'`
+fi
+
 if [ "$OP" = "add" ]; then
   OTHERS=" $GW"
 fi
