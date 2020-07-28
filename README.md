@@ -1,3 +1,7 @@
+./gfwlist2dnsmasq.sh --insecure -d 127.0.0.1 -p 5353 -o dnsmasq_gfw.conf
+
+
+
 # gfwlist2dnsmasq
 A shell script which convert gfwlist into dnsmasq rules.
 

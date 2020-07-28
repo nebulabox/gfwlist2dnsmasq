@@ -89,7 +89,7 @@ check_depends(){
 
     SYS_KERNEL=`uname -s`
     if [ $SYS_KERNEL = "Darwin"  -o $SYS_KERNEL = "FreeBSD" ]; then
-        BASE64_DECODE='base64 -D'
+        BASE64_DECODE='/usr/bin/base64 -D'
         SED_ERES='sed -E'
     else
         BASE64_DECODE='base64 -d'
@@ -224,9 +224,11 @@ process(){
 
     # Fetch GfwList and decode it into plain text
     printf 'Fetching GfwList... '
-    if [ $USE_WGET != 1 ]; then
+    if [[ $USE_WGET != 1 ]]; then
+        echo "curl -s -L $CURL_EXTARG -o$BASE64_FILE $BASE_URL"
         curl -s -L $CURL_EXTARG -o$BASE64_FILE $BASE_URL
     else
+        echo "wget -q $WGET_EXTARG -O$BASE64_FILE $BASE_URL"
         wget -q $WGET_EXTARG -O$BASE64_FILE $BASE_URL
     fi
     if [ $? != 0 ]; then
